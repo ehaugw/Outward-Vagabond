@@ -42,6 +42,7 @@
     <Compile Include="EffectInitializer.cs" />
     <Compile Include="Effects\TameBeastStatusEffect.cs" />
     <Compile Include="Effects\TameBeastEffect.cs" />
+    <Compile Include="Skills\SwiftStrikeSkill.cs" />
     <Compile Include="Skills\TameBeastSkill.cs" />
     <Compile Include="Vagabond.cs" />
     <Compile Include="QuestTrackers\WhiteFangOutsideTracker.cs" />

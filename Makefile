@@ -22,7 +22,7 @@ assemble:
 	cp -u resources/textures/tame_beast_status_effect.png      public/$(sideloaderpath)/Texture2D/tamingEffect.png
 	
 	mkdir -p public/$(sideloaderpath)/Items/IronCoin/Textures
-	cp -u resources/icons/IronCoin.png                         public/$(sideloaderpath)/Items/IronCoin/Textures/icon.png
+	cp -u ../IronCoin/resources/icons/IronCoin.png             public/$(sideloaderpath)/Items/IronCoin/Textures/icon.png
 	mkdir -p public/$(sideloaderpath)/Items/TameBeast/Textures
 	cp -u resources/icons/tame_beast.png                       public/$(sideloaderpath)/Items/TameBeast/Textures/icon.png
 	cp -u resources/icons/tame_beast_small.png                 public/$(sideloaderpath)/Items/TameBeast/Textures/skillicon.png
@@ -36,8 +36,8 @@ assemble:
 	cp -u resources/icons/forager.png                          public/$(sideloaderpath)/Items/Forager/Textures/icon.png
 	cp -u resources/icons/forager_small.png                    public/$(sideloaderpath)/Items/Forager/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/CarefulMaintenance/Textures
-	cp -u resources/icons/forager.png                          public/$(sideloaderpath)/Items/CarefulMaintenance/Textures/icon.png
-	cp -u resources/icons/forager_small.png                    public/$(sideloaderpath)/Items/CarefulMaintenance/Textures/skillicon.png
+	cp -u resources/icons/careful_maintenance.png              public/$(sideloaderpath)/Items/CarefulMaintenance/Textures/icon.png
+	cp -u resources/icons/careful_maintenance_small.png        public/$(sideloaderpath)/Items/CarefulMaintenance/Textures/skillicon.png
 	
 publish:
 	make clean

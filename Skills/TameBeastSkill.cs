@@ -18,7 +18,7 @@ namespace Vagabond
                 New_ItemID = IDs.tameBeastID,
                 SLPackName = Vagabond.ModFolderName,
                 SubfolderName = "TameBeast",
-                Description = "Sit down and wait for nearby predator to eat fresh meat that you left behind, and hope that they become friendly towards you.",
+                Description = "Sit down and wait for nearby predator to eat raw meat that you left behind, and hope that they become friendly towards you.",
                 CastType = Character.SpellCastType.Sit,
                 CastModifier = Character.SpellCastModifier.NONE,
                 CastLocomotionEnabled = false,
