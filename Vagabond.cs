@@ -64,6 +64,7 @@ namespace Vagabond
             ForagerSkill.Init();
             TameBeastSkill.Init();
             SwiftStrikeSkill.Init();
+            CommandBeastSkill.Init();
 
             VagabondSkillTree.SetupSkillTree(ref martialArtistTreeInstance);
             

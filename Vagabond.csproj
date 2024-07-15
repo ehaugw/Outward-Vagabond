@@ -40,11 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EffectInitializer.cs" />
+    <Compile Include="Effects\CommandBeastEffect.cs" />
     <Compile Include="Effects\TameBeastStatusEffect.cs" />
     <Compile Include="Effects\TamedStatusEffect.cs" />
     <Compile Include="Effects\TameBeastEffect.cs" />
     <Compile Include="Skills\SwiftStrikeSkill.cs" />
     <Compile Include="Skills\TameBeastSkill.cs" />
+    <Compile Include="Skills\CommandBeastSkill.cs" />
     <Compile Include="Vagabond.cs" />
     <Compile Include="QuestTrackers\WhiteFangOutsideTracker.cs" />
     <Compile Include="Skills\ForagerSkill.cs" />
