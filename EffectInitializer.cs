@@ -9,7 +9,7 @@ namespace Vagabond
 {
     class EffectInitializer
     {
-        public static void MakeSittingPrefab()
+        public static void MakeTamingPrefab()
         {
             var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
                 effectName: TameBeastStatusEffect.TAMING_EFFECT_NAME,

@@ -51,7 +51,7 @@ namespace Vagabond
         private void OnPackLoaded()
         {
             EffectInitializer.MakeHonedBladeInfusion();
-            EffectInitializer.MakeSittingPrefab();
+            EffectInitializer.MakeTamingPrefab();
 
             PrecisionStrikeSkill.Init();
             ApplyHonedBlade.Init();
