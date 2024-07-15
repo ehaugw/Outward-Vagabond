@@ -18,7 +18,7 @@ namespace Vagabond
                 New_ItemID = IDs.tameBeastID,
                 SLPackName = Vagabond.ModFolderName,
                 SubfolderName = "TameBeast",
-                Description = "Sit down and wait for nearby predator to eat raw meat that you left behind, and hope that they become friendly towards you.",
+                Description = "Sit down and wait for nearby predator to eat raw meat on the ground, and hope that they become friendly towards you.",
                 CastType = Character.SpellCastType.Sit,
                 CastModifier = Character.SpellCastModifier.NONE,
                 CastLocomotionEnabled = false,
@@ -41,11 +41,7 @@ namespace Vagabond
 
             myitem.ApplyTemplate();
             Skill skill = ResourcesPrefabManager.Instance.GetItemPrefab(myitem.New_ItemID) as Skill;
-
-            //var myEffects = skill.transform.Find("Effects");
-            //myEffects.gameObject.AddComponent<TameBeastEffect>();
-
             return skill;
-        } //PART OF CHANNEL DIVINITY
+        }
     }
 }
