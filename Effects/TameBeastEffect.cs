@@ -1,5 +1,6 @@
 ﻿namespace Vagabond
 {
+    using InstanceIDs;
     using System.Collections.Generic;
     using System.Linq;
     using TinyHelper;
@@ -11,7 +12,7 @@
         public static void StaticActivate(Character character, object[] _infos, Effect instance)
         {
             var foods = GameObject.FindObjectsOfType<Food>();
-            var foodItems = foods.Select(x => x.transform.gameObject).ToList();
+            var foodItems = foods.Where(x => x.ItemID == IDs.rawMeatID).Select(x => x.transform.gameObject).ToList();
 
             foreach (var food in foodItems.Where(x => x.transform.parent == null && Vector3.Distance(character.transform.position, x.transform.position) <= TameBeastSkill.PLAYER_RANGE))
             {
