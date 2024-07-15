@@ -36,7 +36,8 @@
                 if (closestBeast != null)
                 {
                     closestBeast.ChangeFaction(Character.Factions.Player);
-                    Destroy(food);
+                    closestBeast.StatusEffectMngr.AddStatusEffect(Vagabond.Instance.Tamed, character);
+                    DestroyImmediate(food);
                     CasualStagger.Stagger(closestBeast);
                 }
             }

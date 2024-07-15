@@ -25,6 +25,9 @@ namespace Vagabond
         public Tag ForagerTag;
 
         public static Vagabond Instance;
+
+        public StatusEffect Tamed;
+
         internal void Awake()
         {
             Instance = this;
@@ -52,6 +55,7 @@ namespace Vagabond
         {
             EffectInitializer.MakeHonedBladeInfusion();
             EffectInitializer.MakeTamingPrefab();
+            Tamed = EffectInitializer.MakeTamedPrefab();
 
             PrecisionStrikeSkill.Init();
             ApplyHonedBlade.Init();

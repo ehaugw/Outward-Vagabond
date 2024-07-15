@@ -9,6 +9,33 @@ namespace Vagabond
 {
     class EffectInitializer
     {
+        public static StatusEffect MakeTamedPrefab()
+        {
+            var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
+                effectName: TamedStatusEffect.TAMING_EFFECT_NAME,
+                displayName: TamedStatusEffect.TAMING_DISPLAY_NAME,
+                familyName: TamedStatusEffect.TAMING_EFFECT_NAME,
+                description: "Tamed",
+                lifespan: -1,
+                refreshRate: TamedStatusEffect.TICK_RATE,
+                stackBehavior: StatusEffectFamily.StackBehaviors.Override,
+                targetStatusName: "Bandage",
+                isMalusEffect: false,
+                modGUID: Vagabond.GUID,
+                iconFileName: Vagabond.ModFolderName + @"\SideLoader\Texture2D\tamingEffect.png"
+            ); ;
+
+            var effectSignature = statusEffect.StatusEffectSignature;
+            var effectComponent = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectSignature.transform).AddComponent<TamedStatusEffect>();
+            effectComponent.UseOnce = false;
+            effectSignature.Effects = new List<Effect>() { effectComponent };
+
+            statusEffect.IsHidden = false;
+            statusEffect.DisplayInHud = true;
+
+            return statusEffect;
+        }
+
         public static void MakeTamingPrefab()
         {
             var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
