@@ -21,10 +21,20 @@ namespace Vagabond
                 _affectedCharacter.StatusEffectMngr.CleanseStatusEffect(Vagabond.Instance.Tamed);
             }
 
-            if (SourceCharacter != null && _affectedCharacter.IsAI && !_affectedCharacter.InCombat && Vector3.Distance(_affectedCharacter.transform.position, SourceCharacter.transform.position) > 10)
+            if (SourceCharacter != null && _affectedCharacter.IsAI && !_affectedCharacter.InCombat && Vector3.Distance(_affectedCharacter.transform.position, SourceCharacter.transform.position) > 15)
             {
                 var characterAI = _affectedCharacter.gameObject.GetComponentInChildren<CharacterAI>();
-                characterAI.SetDestination(SourceCharacter.transform.position);
+
+                foreach (var state in characterAI.AiStates)
+                {
+                    if (state is AISWander)
+                    {
+                        characterAI.SwitchAiState(state.StateID);
+                        ((AISWander)state).SpeedModif = 1;
+                        break;
+                    }
+                }
+                characterAI.SetDestination(SourceCharacter.transform.position, false);
             }
         }
     }
