@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 12, 2024. Due to significant changes in a few mod frameworks' infrastructures, it is recommended that you update all mods that are older than November 08, 2022.
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 16, 2024. 
 
 
 
@@ -9,27 +9,7 @@ This mods was confirmed to work with the (at that time) current base game (Outwa
 
 What's the purpose of "Vagabond"?
 
-* Provide some simple mechanics, locked behind basic skills, to add some depth to combat
-
-Manual Installation
-
-* Ensure that you are opted in to the **default-mono** branch.
-* Ensure that [BepInEx](https://outward.thunderstore.io/package/BepInEx/BepInExPack_Outward/ "BepInEx") is installed.
-* Make sure all **dependencies** are installed. The mod **depends** on these and will not work without them!
-
-  * **[Outward SideLoader](https://outward.thunderstore.io/package/sinai-dev/SideLoader/ "Outward SideLoader")**
-  * **[BepInEx](https://outward.thunderstore.io/package/BepInEx/BepInExPack_Outward/ "BepInEx")**
-* Uninstall previous versions of the mod.
-* Download "Vagabond.zip".
-* Move "Vagabond.zip" into the "Outward" game folder.
-* Right click "Vagabond.zip" and click "Extract Here".
-
-Manual Uninstallation
-
-* Version 1.0.0 and onwards
-
-  * Navigate to "Outward/BepInEx/plugins/".
-  * Delete the "Vagabond" folder.
+* Provide positional mechanics, beast taming, dirty tricks and an enhanced survival experience.
 
 
 
@@ -37,11 +17,68 @@ Manual Uninstallation
 # Features
 
 The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus on foraging, taming wildlife, maintaining equipment, dirty tricks and positional combat.
-**Swift Strike** (Passive)
+**Swift Strike** (Cooldown: 15 seconds, Stamina cost: 7)
 
 * Dash forward and strike. Applies Bleeding and causes Drawback.
 
-**Tame Beast** (Passive)
+**Command Beast** (Cooldown: 1 second, Stamina cost: 5)
+
+* C
+* o
+* m
+* m
+* a
+* n
+* d
+* s
+*  
+* t
+* a
+* m
+* e
+* d
+*  
+* b
+* e
+* a
+* s
+* t
+* s
+*  
+* t
+* o
+*  
+* a
+* t
+* t
+* a
+* c
+* k
+*  
+* t
+* h
+* e
+*  
+* t
+* a
+* r
+* g
+* e
+* t
+* e
+* d
+*  
+* c
+* r
+* e
+* a
+* t
+* u
+* r
+* e
+* .
+
+**Tame Beast** (Cooldown: 2 seconds, Stamina cost: 5)
 
 * Sit down and wait for nearby predator to eat fresh meat that you left behind, and hope that they become friendly towards you.
 
@@ -67,6 +104,11 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.3
+
+  * Implemented **Command Beast**
+  * Tamed beasts follow you
+  * Fixed **Tame Beast** to only work with raw meat
 * Version 0.0.2
 
   * Implement **Tame Beast** and **Swift Strike**
@@ -77,7 +119,7 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 
 
 
-# Other mods by [ehaugw](https://www.nexusmods.com/users/51266516 "ehaugw") (this list may be outdated)
+# Other mods by [ehaugw](https://thunderstore.io/c/outward/p/ehaugw/ "ehaugw") (this list may be outdated)
 
 
 * [Anti Alchemy Abuse](https://outward.thunderstore.io/package/ehaugw/AntiAlchemyAbuse/ "Anti Alchemy Abuse")
@@ -119,6 +161,9 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 * [Martial Artist](https://outward.thunderstore.io/package/ehaugw/MartialArtist/ "Martial Artist")
 
   * Provide some simple mechanics, locked behind basic skills, to add some depth to combat
+* [Vagabond](https://outward.thunderstore.io/package/ehaugw/Vagabond/ "Vagabond")
+
+  * Provide positional mechanics, beast taming, dirty tricks and an enhanced survival experience.
 
 
 
@@ -126,3 +171,23 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Credits
 
 Thanks to **Sinai** for making the [Outward Explorer](https://github.com/sinaioutlander/Outward-Mods/tree/master/Explorer "Outward Explorer"), and always beeing up for discussing solutions to anything.
+Manual Installation
+
+* Ensure that you are opted in to the **default-mono** branch.
+* Ensure that [BepInEx](https://outward.thunderstore.io/package/BepInEx/BepInExPack_Outward/ "BepInEx") is installed.
+* Make sure all **dependencies** are installed. The mod **depends** on these and will not work without them!
+
+  * **[Outward SideLoader](https://outward.thunderstore.io/package/sinai-dev/SideLoader/ "Outward SideLoader")**
+  * **[BepInEx](https://outward.thunderstore.io/package/BepInEx/BepInExPack_Outward/ "BepInEx")**
+* Uninstall previous versions of the mod.
+* Download "Vagabond.zip".
+* Move "Vagabond.zip" into the "Outward" game folder.
+* Right click "Vagabond.zip" and click "Extract Here".
+
+Manual Uninstallation
+
+* Version 1.0.0 and onwards
+
+  * Navigate to "Outward/BepInEx/plugins/".
+  * Delete the "Vagabond" folder.
+
