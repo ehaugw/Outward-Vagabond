@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 16, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 17, 2024. 
 
 
 
@@ -21,66 +21,21 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 
 * Dash forward and strike. Applies Bleeding and causes Drawback.
 
-**Command Beast** (Cooldown: 1 second, Stamina cost: 5)
+**Command Beast** (Cooldown: 20 seconds, Stamina cost: 2)
 
-* C
-* o
-* m
-* m
-* a
-* n
-* d
-* s
-*  
-* t
-* a
-* m
-* e
-* d
-*  
-* b
-* e
-* a
-* s
-* t
-* s
-*  
-* t
-* o
-*  
-* a
-* t
-* t
-* a
-* c
-* k
-*  
-* t
-* h
-* e
-*  
-* t
-* a
-* r
-* g
-* e
-* t
-* e
-* d
-*  
-* c
-* r
-* e
-* a
-* t
-* u
-* r
-* e
-* .
+* Commands tamed beasts to attack the targeted creature.
+* The commanded beasts gain Unerring Read.
 
 **Tame Beast** (Cooldown: 2 seconds, Stamina cost: 5)
 
 * Sit down and wait for nearby predator to eat fresh meat that you left behind, and hope that they become friendly towards you.
+* Works on the hyena faction, which is wild hyenas in Chersonese, Stekosaurs in Hallow Marsh, Golems in Emercar Forest
+* When tamed, the beasts will follow you for 240 seconds. After that, you need **Animal Companion** to give them more meat for them to follow you for another 240 seconds.
+* The beast gets the status effects from eating the meat given to them.
+
+**Animal Companion** (Passive)
+
+* You can give food to tamed beasts to reproduce the initial taming effects, such as making them follow you.
 
 **Careful Maintenance** (Passive)
 
@@ -104,6 +59,16 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.5
+
+  * Include **Animal Companion** description
+* Version 0.0.4
+
+  * Command beast is 20 sec CD and gives unerring read to beasts
+  * Add all 8 skills to skill tree and set up mutex
+  * Implemented **Animal Companion**
+  * Tamed status effect to change action rather than spell effect
+  * **Swift Strike** damage modifier from 1.5 to 3
 * Version 0.0.3
 
   * Implemented **Command Beast**
