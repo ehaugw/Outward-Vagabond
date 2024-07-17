@@ -9,24 +9,24 @@ namespace Vagabond
 {
     class EffectInitializer
     {
-        public static StatusEffect MakeTamedPrefab()
+        public static StatusEffect MakeTamedStatusEffectPrefab()
         {
             var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
-                effectName: TamedStatusEffect.TAMING_EFFECT_NAME,
-                displayName: TamedStatusEffect.TAMING_DISPLAY_NAME,
-                familyName: TamedStatusEffect.TAMING_EFFECT_NAME,
-                description: "Tamed",
+                effectName: TamedEffect.EFFECT_NAME,
+                displayName: TamedEffect.DISPLAY_NAME,
+                familyName: TamedEffect.EFFECT_NAME,
+                description: TamedEffect.DESCRIPTION,
                 lifespan: -1,
-                refreshRate: TamedStatusEffect.TICK_RATE,
+                refreshRate: TamedEffect.TICK_RATE,
                 stackBehavior: StatusEffectFamily.StackBehaviors.Override,
                 targetStatusName: "Bandage",
                 isMalusEffect: false,
                 modGUID: Vagabond.GUID,
-                iconFileName: Vagabond.ModFolderName + @"\SideLoader\Texture2D\tamingEffect.png"
-            ); ;
+                iconFileName: Vagabond.ModFolderName + TamedEffect.IMAGE_PATH
+            );
 
             var effectSignature = statusEffect.StatusEffectSignature;
-            var effectComponent = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectSignature.transform).AddComponent<TamedStatusEffect>();
+            var effectComponent = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectSignature.transform).AddComponent<TamedEffect>();
             effectComponent.UseOnce = false;
             effectSignature.Effects = new List<Effect>() { effectComponent };
 
@@ -36,24 +36,51 @@ namespace Vagabond
             return statusEffect;
         }
 
-        public static void MakeTamingPrefab()
+        public static StatusEffect MakeAnimalCompanionStatusEffectPrefab()
         {
             var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
-                effectName: TameBeastStatusEffect.TAMING_EFFECT_NAME,
-                displayName: TameBeastStatusEffect.TAMING_DISPLAY_NAME,
-                familyName: TameBeastStatusEffect.TAMING_EFFECT_NAME,
-                description: "Wait for nearby beasts to eat the meat you left behind.",
-                lifespan: -1,
-                refreshRate: TameBeastStatusEffect.TICK_RATE,
+                effectName: AnimalCompanionEffect.EFFECT_NAME,
+                displayName: AnimalCompanionEffect.DISPLAY_NAME,
+                familyName: AnimalCompanionEffect.EFFECT_NAME,
+                description: AnimalCompanionEffect.DESCRIPTION,
+                lifespan: AnimalCompanionEffect.LIFESPAN,
+                refreshRate: AnimalCompanionEffect.TICK_RATE,
                 stackBehavior: StatusEffectFamily.StackBehaviors.Override,
                 targetStatusName: "Bandage",
                 isMalusEffect: false,
                 modGUID: Vagabond.GUID,
-                iconFileName: Vagabond.ModFolderName + @"\SideLoader\Texture2D\tamingEffect.png"
-            );;
+                iconFileName: Vagabond.ModFolderName + AnimalCompanionEffect.IMAGE_PATH
+            );
 
             var effectSignature = statusEffect.StatusEffectSignature;
-            var effectComponent = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectSignature.transform).AddComponent<TameBeastStatusEffect>();
+            var effectComponent = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectSignature.transform).AddComponent<AnimalCompanionEffect>();
+            effectComponent.UseOnce = false;
+            effectSignature.Effects = new List<Effect>() { effectComponent };
+
+            statusEffect.IsHidden = false;
+            statusEffect.DisplayInHud = true;
+
+            return statusEffect;
+        }
+
+        public static void MakeTamingStatusEffectPrefab()
+        {
+            var statusEffect = TinyEffectManager.MakeStatusEffectPrefab(
+                effectName: TamingEffect.EFFECT_NAME,
+                displayName: TamingEffect.DISPLAY_NAME,
+                familyName: TamingEffect.EFFECT_NAME,
+                description: TamingEffect.DESCRIPTION,
+                lifespan: -1,
+                refreshRate: TamingEffect.TICK_RATE,
+                stackBehavior: StatusEffectFamily.StackBehaviors.Override,
+                targetStatusName: "Bandage",
+                isMalusEffect: false,
+                modGUID: Vagabond.GUID,
+                iconFileName: Vagabond.ModFolderName + TamedEffect.IMAGE_PATH
+            );
+
+            var effectSignature = statusEffect.StatusEffectSignature;
+            var effectComponent = TinyGameObjectManager.MakeFreshObject("Effects", true, true, effectSignature.transform).AddComponent<TamingEffect>();
             effectComponent.UseOnce = false;
             effectSignature.Effects = new List<Effect>() { effectComponent };
 

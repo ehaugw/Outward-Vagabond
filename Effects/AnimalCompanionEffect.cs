@@ -9,26 +9,17 @@ namespace Vagabond
     using TinyHelper;
     using UnityEngine;
 
-    class TamedStatusEffect : Effect
+    class AnimalCompanionEffect : Effect
     {
-        public const string TAMING_EFFECT_NAME = "Tamed";
-        public const string TAMING_DISPLAY_NAME = "Tamed";
+        public const string EFFECT_NAME = "AnimalCompanionStatusEffect";
+        public const string DISPLAY_NAME = "Animal companion";
+        public const string DESCRIPTION = "You are an animal companion";
+        public const string IMAGE_PATH = @"\SideLoader\Texture2D\animalCompanionStatusEffect.png";
         public const float TICK_RATE = 0.2f;
-        public Character.Factions OriginalFaction;
-
-        protected override void StopAffectLocally(Character _affectedCharacter)
-        {
-            _affectedCharacter.ChangeFaction(OriginalFaction);
-        }
+        public const float LIFESPAN = 240;
 
         protected override void ActivateLocally(Character _affectedCharacter, object[] _infos)
         {
-            if (!_affectedCharacter.IsAlly(SourceCharacter))
-            {
-                OriginalFaction = _affectedCharacter.Faction;
-                _affectedCharacter.ChangeFaction(SourceCharacter.Faction);
-            }
-
             if (SourceCharacter != null && _affectedCharacter.IsAI && !_affectedCharacter.InCombat && Vector3.Distance(_affectedCharacter.transform.position, SourceCharacter.transform.position) > 15)
             {
                 var characterAI = _affectedCharacter.gameObject.GetComponentInChildren<CharacterAI>();

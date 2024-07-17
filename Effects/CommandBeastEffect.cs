@@ -18,9 +18,9 @@
             foreach (var otherCharacter in charsInRange)
             {
 
-                if (otherCharacter?.StatusEffectMngr?.HasStatusEffect(TamedStatusEffect.TAMING_EFFECT_NAME) ?? false)
+                if (otherCharacter?.StatusEffectMngr?.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME) ?? false)
                 {
-                    if (otherCharacter?.StatusEffectMngr?.GetStatusEffectOfName(TamedStatusEffect.TAMING_EFFECT_NAME)?.SourceCharacter == character)
+                    if (otherCharacter?.StatusEffectMngr?.GetStatusEffectOfName(AnimalCompanionEffect.EFFECT_NAME)?.SourceCharacter == character)
                     {
                         if (character.TargetingSystem?.LockedCharacter?.LockingPoint is LockingPoint lockingPoint)
                         {

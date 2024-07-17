@@ -21,7 +21,7 @@ namespace Vagabond
                 New_ItemID = IDs.commandBeastSkillID,
                 SLPackName = Vagabond.ModFolderName,
                 SubfolderName = "CommandBeast",
-                Description = "Commands tamed beasts to attack the targeted creature.",
+                Description = "Commands animal companions to attack the targeted creature.",
                 CastType = Character.SpellCastType.Fast,
                 CastModifier = Character.SpellCastModifier.Mobile,
                 CastLocomotionEnabled = true,

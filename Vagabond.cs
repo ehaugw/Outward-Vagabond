@@ -26,7 +26,8 @@ namespace Vagabond
 
         public static Vagabond Instance;
 
-        public StatusEffect Tamed;
+        public StatusEffect AnimalCompanionStatusEffectPrefab;
+        public StatusEffect TamedStatusEffectPrefab;
 
         internal void Awake()
         {
@@ -54,8 +55,9 @@ namespace Vagabond
         private void OnPackLoaded()
         {
             EffectInitializer.MakeHonedBladeInfusion();
-            EffectInitializer.MakeTamingPrefab();
-            Tamed = EffectInitializer.MakeTamedPrefab();
+            EffectInitializer.MakeTamingStatusEffectPrefab();
+            AnimalCompanionStatusEffectPrefab = EffectInitializer.MakeAnimalCompanionStatusEffectPrefab();
+            TamedStatusEffectPrefab = EffectInitializer.MakeTamedStatusEffectPrefab();
 
             PrecisionStrikeSkill.Init();
             ApplyHonedBlade.Init();
@@ -65,6 +67,7 @@ namespace Vagabond
             TameBeastSkill.Init();
             SwiftStrikeSkill.Init();
             CommandBeastSkill.Init();
+            AnimalCompanionSkill.Init();
 
             VagabondSkillTree.SetupSkillTree(ref martialArtistTreeInstance);
             

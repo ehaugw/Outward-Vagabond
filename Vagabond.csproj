@@ -41,9 +41,10 @@
   <ItemGroup>
     <Compile Include="EffectInitializer.cs" />
     <Compile Include="Effects\CommandBeastEffect.cs" />
-    <Compile Include="Effects\TameBeastStatusEffect.cs" />
-    <Compile Include="Effects\TamedStatusEffect.cs" />
-    <Compile Include="Effects\TameBeastEffect.cs" />
+    <Compile Include="Effects\TamingEffect.cs" />
+    <Compile Include="Effects\TamedEffect.cs" />
+    <Compile Include="Effects\AnimalCompanionEffect.cs" />
+    <Compile Include="Skills\AnimalCompanionSkill.cs" />
     <Compile Include="Skills\SwiftStrikeSkill.cs" />
     <Compile Include="Skills\TameBeastSkill.cs" />
     <Compile Include="Skills\CommandBeastSkill.cs" />

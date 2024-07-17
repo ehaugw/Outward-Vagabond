@@ -19,10 +19,15 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Texture2D
 	mkdir -p public/$(sideloaderpath)/AssetBundles
 	
-	cp -u resources/textures/tame_beast_status_effect.png      public/$(sideloaderpath)/Texture2D/tamingEffect.png
+	cp -u resources/textures/tame_beast_status_effect.png      public/$(sideloaderpath)/Texture2D/tamedStatusEffect.png
+	cp -u resources/textures/tame_beast_status_effect.png      public/$(sideloaderpath)/Texture2D/animalCompanionStatusEffect.png
+	cp -u resources/textures/tame_beast_status_effect.png      public/$(sideloaderpath)/Texture2D/tamingStatusEffect.png
 	
 	mkdir -p public/$(sideloaderpath)/Items/IronCoin/Textures
 	cp -u ../IronCoin/resources/icons/IronCoin.png             public/$(sideloaderpath)/Items/IronCoin/Textures/icon.png
+	mkdir -p public/$(sideloaderpath)/Items/AnimalCompanion/Textures
+	cp -u resources/icons/tame_beast.png                       public/$(sideloaderpath)/Items/AnimalCompanion/Textures/icon.png
+	cp -u resources/icons/tame_beast_small.png                 public/$(sideloaderpath)/Items/AnimalCompanion/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/TameBeast/Textures
 	cp -u resources/icons/tame_beast.png                       public/$(sideloaderpath)/Items/TameBeast/Textures/icon.png
 	cp -u resources/icons/tame_beast_small.png                 public/$(sideloaderpath)/Items/TameBeast/Textures/skillicon.png
