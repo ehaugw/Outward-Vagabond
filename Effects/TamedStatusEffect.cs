@@ -14,11 +14,19 @@ namespace Vagabond
         public const string TAMING_EFFECT_NAME = "Tamed";
         public const string TAMING_DISPLAY_NAME = "Tamed";
         public const float TICK_RATE = 0.2f;
+        public Character.Factions OriginalFaction;
+
+        protected override void StopAffectLocally(Character _affectedCharacter)
+        {
+            _affectedCharacter.ChangeFaction(OriginalFaction);
+        }
+
         protected override void ActivateLocally(Character _affectedCharacter, object[] _infos)
         {
             if (!_affectedCharacter.IsAlly(SourceCharacter))
             {
-                _affectedCharacter.StatusEffectMngr.CleanseStatusEffect(Vagabond.Instance.Tamed);
+                OriginalFaction = _affectedCharacter.Faction;
+                _affectedCharacter.ChangeFaction(SourceCharacter.Faction);
             }
 
             if (SourceCharacter != null && _affectedCharacter.IsAI && !_affectedCharacter.InCombat && Vector3.Distance(_affectedCharacter.transform.position, SourceCharacter.transform.position) > 15)
