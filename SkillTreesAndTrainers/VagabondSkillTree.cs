@@ -28,8 +28,8 @@ namespace Vagabond
 
                 SkillRows = new List<SL_SkillRow>() {
                     new SL_SkillRow() { RowIndex = 1, Slots = new List<SL_BaseSkillSlot>() {
-                            new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 50, SkillID = IDs.swiftStrikeID,             Breakthrough = false,   RequiredSkillSlot = Vector2.zero, },
-                            new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 50, SkillID = IDs.throwSandSkillID,          Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
+                        new SL_SkillSlot() { ColumnIndex = 1, SilverCost = 50, SkillID = IDs.swiftStrikeID,             Breakthrough = false,   RequiredSkillSlot = Vector2.zero, },
+                        new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 50, SkillID = IDs.throwSandSkillID,          Breakthrough = false,   RequiredSkillSlot = new Vector2(3,2) },
                     } },
 
                     new SL_SkillRow() { RowIndex = 2, Slots = new List<SL_BaseSkillSlot>() {
