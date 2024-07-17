@@ -108,7 +108,7 @@ namespace Vagabond
 
         private static void setDamage(WeaponDamage damage)
         {
-            float minDamage = 1.5f;
+            float minDamage = 3f;
 
             damage.WeaponDamageMult = minDamage;
             damage.WeaponDamageMultKDown = -1.0f;
