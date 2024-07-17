@@ -73,18 +73,18 @@ namespace Vagabond
             var openTrainer = TinyDialogueManager.MakeTrainDialogueAction(graph, trainerComp);
             var markInitialTalkDone = TinyDialogueManager.MakeQuestEvent(graph, WhiteFangOutsideTracker.QE_InitialTalk.EventUID);
             var giveSwordEvent = TinyDialogueManager.MakeQuestEvent(graph, WhiteFangOutsideTracker.QE_GivenSword.EventUID);
-            var giveSwordEventEnchanted = TinyDialogueManager.MakeQuestEvent(graph, WhiteFangOutsideTracker.QE_GivenSwordEnchanted.EventUID);
+            var giveSwordKaziteEvent = TinyDialogueManager.MakeQuestEvent(graph, WhiteFangOutsideTracker.QE_GivenSwordKazite.EventUID);
             var giveMoveCommandEvent = TinyDialogueManager.MakeQuestEvent(graph, WhiteFangOutsideTracker.QE_MoveOrderToEmercar.EventUID);
             var giveIronCoin = TinyDialogueManager.MakeGiveItemReward(graph, IDs.ironCoinID, GiveReward.Receiver.Host);
             var setFoundInEmercar = TinyDialogueManager.MakeQuestEvent(graph, WhiteFangOutsideTracker.QE_FoundInEmercar.EventUID);
             var giveUpSword = TinyDialogueManager.MakeResignItem(graph, IDs.ironSwordID, GiveReward.Receiver.Instigator);
-            var giveUpSwordEnchanted = TinyDialogueManager.MakeResignItem(graph, IDs.tsarSwordID, GiveReward.Receiver.Instigator, enchantment: IDs.unsuspectedStrengthID);
+            var giveUpSwordKazite = TinyDialogueManager.MakeResignItem(graph, IDs.kaziteBladeID, GiveReward.Receiver.Instigator);
 
             //Trainer Statements
             var tookDownAccursed = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "You there, you took down that occursed thing? Most impressive.");
             var stateCouldUseWeapon = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Thank you for freeing me from this cage. I could use a weapon though, the plains outside are quite dangerous still, no? An Iron Sword will suffice.");
             var respondToGivenRegularWeapon = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "You have quite the eye, you could have given me a stick and it would have proven enough, but I am grateful that you did not, that handicap would surely end poorly.");
-            var respondToGivenEnchantedWeapon = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "This blade is nothing so simple. You've handed me an enchanted weapon, I can only hope to repay you one day.");
+            var respondToGivenKaziteWeapon = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "This blade is nothing so simple. You've handed me a kazite weapon from my homelands, I can only hope to repay you one day.");
             var presentation = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I am a fighter, gladiator, monk, ranger; in short, I am a master of the martial arts, a student of diaspora disciplines, and teacher of my own school of thought.");
             var journeyDescription = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "After your effort to see me freed, I made short work of the bandits and hyenas in my way to the canyon passage. It was the forest that I saw the most trouble, those giants, the exiled ones, are quite the tough training companions, but not enough to sway my resolve.");
             var aboutClaimingDocks = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Strong beasts roam those docks, and reliably attempt to claim it as their territory, it is a proving ground for any who truly wish to test their worth. A worthy domain for a warrior's rest in the making. I like the way you think my pupil.");
@@ -98,6 +98,7 @@ namespace Vagabond
             var stateReadyToLeave = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "I will be in Emercar shortly.");
             var respondToPlayerSearchingForWeapon = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Thank you! I will remember this.");
             var greetAfterGivenWeapon = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "Ahh... My saviour!");
+            var cameAcrossIronCoin = TinyDialogueManager.MakeStatementNode(graph, IdentifierName, "That kazite blade of yours truly saved me in a nasty encounter. I have nothing of value to repay you with, but I came across this curious coin... Please accept it as a token of my appreciation.");
 
             //Player Statements
             var whoAreYouText = "Who are you exactly?";
@@ -106,29 +107,36 @@ namespace Vagabond
             var ellatProtectText = "Elatt protect you.";
             var whyThisPathText = "What led you down this path?";
             var askFacedImmaculateText = "Have you ever faced an Immacuate?";
-            var offerSimpleWeaponText = "Here, a simple weapon, but you seem most capable.";
             var requestTrainingText = "If you are willing, I would like to learn from you.";
             var didYouChallengeText = "Have you ever challenged the masters of each trade around Aurai?";
+            var offerSimpleWeaponText = "Here, a simple weapon, but you seem most capable.";
+            var offerKaziteWeaponText = "Here, a kazite blade, it seems to go well with your equipment.";
             var tryFindWeaponText = "I do not have an Iron Sword, but I will try to find one for you.";
-            
+            var aboutWeaponsText = "About the sword you requested...";
+
             //Quest Conditions
             var checkHasTalkedBefore = TinyDialogueManager.MakeEventOccuredCondition(graph, WhiteFangOutsideTracker.QE_InitialTalk.EventUID, 1);
             var checkHasGivenSword = TinyDialogueManager.MakeEventOccuredCondition(graph, WhiteFangOutsideTracker.QE_GivenSword.EventUID, 1);
-            var checkHasGivenSwordEnchanted = TinyDialogueManager.MakeEventOccuredCondition(graph, WhiteFangOutsideTracker.QE_GivenSwordEnchanted.EventUID, 1);
+            var checkHasGivenSwordKazite = TinyDialogueManager.MakeEventOccuredCondition(graph, WhiteFangOutsideTracker.QE_GivenSwordKazite.EventUID, 1);
             var checkFoundInEmercar = TinyDialogueManager.MakeEventOccuredCondition(graph, WhiteFangOutsideTracker.QE_FoundInEmercar.EventUID, 1);
             var checkHasMoveOrder = TinyDialogueManager.MakeEventOccuredCondition(graph, WhiteFangOutsideTracker.QE_MoveOrderToEmercar.EventUID, 1);
             
             //Inventory Item conditions
             var checkHaveSwordInInventory = TinyDialogueManager.MakeHasItemCondition(graph, IDs.ironSwordID, 1);
-            var checkHasEnchantedSword = TinyDialogueManager.MakeHasItemConditionSimple(graph, IDs.tsarSwordID, 1, enchantment: IDs.unsuspectedStrengthID);
+            var checkHaveSwordKaziteInInventoryToo = TinyDialogueManager.MakeHasItemConditionSimple(graph, IDs.kaziteBladeID, 1);
+            var checkHaveSwordKaziteInInventoryOnly = TinyDialogueManager.MakeHasItemConditionSimple(graph, IDs.kaziteBladeID, 1);
 
 
             //Player Choices
-            var giveWeaponOrPresentationOrTrain = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { offerSimpleWeaponText, whoAreYouText, requestTrainingText, });
+            var aboutWeaponOrPresentationOrTrain = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { aboutWeaponsText, whoAreYouText, requestTrainingText, });
             var tryFindOrPresentationOrTrain = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { tryFindWeaponText, whoAreYouText, requestTrainingText, });
             var presentationOrTrain = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { whoAreYouText, requestTrainingText, });
             var proposeOrPresentationOrTrain = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { suggestTheDocsText, whoAreYouText, requestTrainingText, });
             var talkOrTrainEmercar = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { requestTrainingText, howWasJourneyText, whyThisPathText, askFacedImmaculateText, didYouChallengeText, ellatProtectText });
+
+            var playerDecideWeaponToGive = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { offerSimpleWeaponText, offerKaziteWeaponText, tryFindWeaponText });
+            var playerOfferKazite = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { offerKaziteWeaponText, tryFindWeaponText });
+            var playerOfferSimple = TinyDialogueManager.MakeMultipleChoiceNode(graph, new string[] { offerSimpleWeaponText, tryFindWeaponText });
 
             if (rpcMeta == "prison")
             {
@@ -149,18 +157,21 @@ namespace Vagabond
 
                 //check if already given a sword or not
                 TinyDialogueManager.ConnectMultipleChoices( graph, checkHasGivenSword, new Node[] { greetAfterGivenWeapon, stateCouldUseWeapon });
-                TinyDialogueManager.ChainNodes(             graph, new Node[] { stateCouldUseWeapon, checkHaveSwordInInventory });
+                TinyDialogueManager.ChainNodes(             graph, new Node[] { stateCouldUseWeapon, aboutWeaponOrPresentationOrTrain });
 
-                //check if player has a weapon if npc needs it
-                TinyDialogueManager.ConnectMultipleChoices( graph, checkHaveSwordInInventory, new Node[] { giveWeaponOrPresentationOrTrain, tryFindOrPresentationOrTrain });
+                //decide which weapons to offer up
+                TinyDialogueManager.ConnectMultipleChoices( graph, aboutWeaponOrPresentationOrTrain, new Node[] { checkHaveSwordInInventory, presentation, responseToTrain });
+                TinyDialogueManager.ConnectMultipleChoices( graph, checkHaveSwordInInventory, new Node[] { checkHaveSwordKaziteInInventoryToo, checkHaveSwordKaziteInInventoryOnly });
+                TinyDialogueManager.ConnectMultipleChoices( graph, checkHaveSwordKaziteInInventoryToo, new Node[] { playerDecideWeaponToGive, playerOfferSimple});
+                TinyDialogueManager.ConnectMultipleChoices( graph, checkHaveSwordKaziteInInventoryOnly, new Node[] { playerOfferKazite, respondToPlayerSearchingForWeapon });
 
-                //enable player to give sword if owned
-                TinyDialogueManager.ConnectMultipleChoices( graph, giveWeaponOrPresentationOrTrain, new Node[] { checkHasEnchantedSword, presentation, responseToTrain });
-                TinyDialogueManager.ConnectMultipleChoices( graph, checkHasEnchantedSword, new Node[] { respondToGivenEnchantedWeapon, respondToGivenRegularWeapon });
+                TinyDialogueManager.ConnectMultipleChoices( graph, playerDecideWeaponToGive, new Node[] { respondToGivenRegularWeapon, respondToGivenKaziteWeapon, respondToPlayerSearchingForWeapon });
+                TinyDialogueManager.ConnectMultipleChoices( graph, playerOfferSimple, new Node[] { respondToGivenRegularWeapon, respondToPlayerSearchingForWeapon });
+                TinyDialogueManager.ConnectMultipleChoices( graph, playerOfferKazite, new Node[] { respondToGivenKaziteWeapon, respondToPlayerSearchingForWeapon });
 
                 //response to receiving a weapon
                 TinyDialogueManager.ChainNodes(             graph, new Node[] { respondToGivenRegularWeapon, giveUpSword, giveSwordEvent});
-                TinyDialogueManager.ChainNodes(             graph, new Node[] { respondToGivenEnchantedWeapon, giveUpSwordEnchanted, giveSwordEventEnchanted, giveSwordEvent });
+                TinyDialogueManager.ChainNodes(             graph, new Node[] { respondToGivenKaziteWeapon, giveUpSwordKazite, giveSwordKaziteEvent, giveSwordEvent });
                 TinyDialogueManager.ChainNodes(             graph, new Node[] { giveSwordEvent, checkHasMoveOrder });
 
                 //enable player to tell that he will be looking for ther weapon if not owned
@@ -180,7 +191,9 @@ namespace Vagabond
                 graph.primeNode = checkFoundInEmercar;
 
                 ////inject compliment about killing wendigo if first time talking
-                TinyDialogueManager.ConnectMultipleChoices( graph, checkFoundInEmercar, new Node[] { welcomeBack, setFoundInEmercar });
+                TinyDialogueManager.ConnectMultipleChoices( graph, checkFoundInEmercar, new Node[] { welcomeBack, checkHasGivenSwordKazite });
+                TinyDialogueManager.ConnectMultipleChoices( graph, checkHasGivenSwordKazite, new Node[] { giveIronCoin, setFoundInEmercar });
+                TinyDialogueManager.ChainNodes(             graph, new Node[] { giveIronCoin, cameAcrossIronCoin, setFoundInEmercar });
                 TinyDialogueManager.ChainNodes(             graph, new Node[] { setFoundInEmercar, isImpressed, talkOrTrainEmercar });
                 TinyDialogueManager.ChainNodes(             graph, new Node[] { welcomeBack, talkOrTrainEmercar });
                 TinyDialogueManager.ConnectMultipleChoices( graph, talkOrTrainEmercar, new Node[] { responseToTrain, journeyDescription, stateWhyPath, stateFacedImmaculate, stateChallengeText, staySafe });

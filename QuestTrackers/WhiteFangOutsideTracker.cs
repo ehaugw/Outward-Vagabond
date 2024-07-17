@@ -71,7 +71,7 @@ namespace Vagabond
         public static QuestEventSignature QE_NotFound;
         public static QuestEventSignature QE_InitialTalk;
         public static QuestEventSignature QE_GivenSword;
-        public static QuestEventSignature QE_GivenSwordEnchanted;
+        public static QuestEventSignature QE_GivenSwordKazite;
         public static QuestEventSignature QE_MoveOrderToEmercar;
         public static QuestEventSignature QE_FoundInEmercar;
 
@@ -80,7 +80,7 @@ namespace Vagabond
             QE_NotFound = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".not_found", false, true, true, QUEST_EVENT_FAMILY_NAME);
             QE_InitialTalk = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".initial_talk", false, true, true, QUEST_EVENT_FAMILY_NAME);
             QE_GivenSword = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".given_sword", false, true, true, QUEST_EVENT_FAMILY_NAME);
-            QE_GivenSwordEnchanted = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".given_sword_enchanted", false, true, true, QUEST_EVENT_FAMILY_NAME);
+            QE_GivenSwordKazite = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".given_sword_kazite", false, true, true, QUEST_EVENT_FAMILY_NAME);
             QE_MoveOrderToEmercar = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".move_order_to_emercar", false, true, true, QUEST_EVENT_FAMILY_NAME);
             QE_FoundInEmercar = CustomQuests.CreateQuestEvent(QE_Scenario_UID + ".found_in_emercar", false, true, true, QUEST_EVENT_FAMILY_NAME);
             
