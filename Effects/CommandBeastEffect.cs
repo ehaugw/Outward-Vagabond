@@ -18,12 +18,13 @@
             foreach (var otherCharacter in charsInRange)
             {
 
-                if (otherCharacter?.StatusEffectMngr?.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME) ?? false)
+                if (otherCharacter?.StatusEffectMngr?.HasStatusEffect(TamedEffect.EFFECT_NAME) ?? false)
                 {
-                    if (otherCharacter?.StatusEffectMngr?.GetStatusEffectOfName(AnimalCompanionEffect.EFFECT_NAME)?.SourceCharacter == character)
+                    if (otherCharacter?.StatusEffectMngr?.GetStatusEffectOfName(TamedEffect.EFFECT_NAME)?.SourceCharacter == character)
                     {
                         if (character.TargetingSystem?.LockedCharacter?.LockingPoint is LockingPoint lockingPoint)
                         {
+                            otherCharacter.StatusEffectMngr.AddStatusEffect(IDs.unerringReadNameID);
                             var characterAI = otherCharacter.gameObject.GetComponentInChildren<CharacterAI>();
                             
                             foreach (var state in characterAI.AiStates)

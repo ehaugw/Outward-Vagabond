@@ -28,8 +28,8 @@ namespace Vagabond
                 MobileCastMovementMult = 0.7f,
                 CastSheatheRequired = 0,
                 
-                Cooldown = 1,
-                StaminaCost = 5,
+                Cooldown = 20,
+                StaminaCost = 2,
                 HealthCost = 0,
                 ManaCost = 0,
             };
