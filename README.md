@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 17, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 18, 2024. 
 
 
 
@@ -59,6 +59,9 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.6
+
+  * Implemented an easter egg where you can give White Fang a weapon that suits his armor
 * Version 0.0.5
 
   * Include **Animal Companion** description
