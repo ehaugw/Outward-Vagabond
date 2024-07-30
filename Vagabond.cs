@@ -17,7 +17,7 @@ namespace Vagabond
     public class Vagabond : BaseUnityPlugin
     {
         public const string GUID = "com.ehaugw.vagabond";
-        public const string VERSION = "0.0.6";
+        public const string VERSION = "0.0.7";
         public const string NAME = "Vagabond";
         public static string ModFolderName = Directory.GetParent(typeof(Vagabond).Assembly.Location).Name.ToString();
 
