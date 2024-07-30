@@ -46,25 +46,25 @@ namespace Vagabond
                     continue;
                 }
 
-                //feed companions
-                List<Character> tamedInRange = new List<Character>();
-                CharacterManager.Instance.FindCharactersInRange(food.transform.position, TameBeastSkill.FOOD_RANGE, ref tamedInRange);
-
-                tamedInRange = tamedInRange.Where(
-                    x =>
-                    x.StatusEffectMngr is StatusEffectManager manager && manager.HasStatusEffect(TamedEffect.EFFECT_NAME) && !manager.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME)
-                ).ToList();
-
-                if (tamedInRange.Count > 0)
-                {
-                    var closestBeast = tamedInRange[0];
-                    EatFood(closestBeast, _affectedCharacter, food);
-                    continue;
-                }
-
-                //attrackt potential companions
                 if (_affectedCharacter.Inventory.SkillKnowledge.IsItemLearned(IDs.animalCompanionSkillID))
                 {
+                    //feed companions
+                    List<Character> tamedInRange = new List<Character>();
+                    CharacterManager.Instance.FindCharactersInRange(food.transform.position, TameBeastSkill.FOOD_RANGE, ref tamedInRange);
+
+                    tamedInRange = tamedInRange.Where(
+                        x =>
+                        x.StatusEffectMngr is StatusEffectManager manager && manager.HasStatusEffect(TamedEffect.EFFECT_NAME) && !manager.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME)
+                    ).ToList();
+
+                    if (tamedInRange.Count > 0)
+                    {
+                        var closestBeast = tamedInRange[0];
+                        EatFood(closestBeast, _affectedCharacter, food);
+                        continue;
+                    }
+
+                    //attrackt potential companions
                     List<Character> companionsInRange = new List<Character>();
                     CharacterManager.Instance.FindCharactersInRange(food.transform.position, AnimalCompanionSkill.ATTRACTION_RANGE, ref companionsInRange);
                     companionsInRange = companionsInRange.Where(
@@ -74,7 +74,7 @@ namespace Vagabond
                     foreach (var c in companionsInRange)
                     {
                         var characterAI = c.gameObject.GetComponentInChildren<CharacterAI>();
-                        characterAI.SetDestination(SourceCharacter.transform.position, false);
+                        characterAI.SetDestination(food.transform.position, false);
                     }
                 }
             }
