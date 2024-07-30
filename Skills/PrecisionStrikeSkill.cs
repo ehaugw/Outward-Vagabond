@@ -24,7 +24,7 @@ namespace Vagabond
                 New_ItemID = IDs.precisionStrikeSkillID,
                 SLPackName = Vagabond.ModFolderName,
                 SubfolderName = "PrecisionStrike",
-                Description = "Weapon attacks ignores half of the targets resistances when the target is prone or hit from behind.",
+                Description = "Weapon attacks against prone targets or from behind deal some bonus damage, ignore half of the targets' resistances and cause extreme bleeding for a brief moment.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,
@@ -42,16 +42,25 @@ namespace Vagabond
         [HarmonyPrefix]
         public static void HarmonyPrefix(Character __instance, UnityEngine.Object _damageSource, DamageList _damage, Vector3 _hitDir, float _angle)
         {
-            var eligibleTypes = new Weapon.WeaponType[] { Weapon.WeaponType.Axe_1H, Weapon.WeaponType.Axe_2H, Weapon.WeaponType.Spear_2H, Weapon.WeaponType.Sword_1H, Weapon.WeaponType.Sword_2H };
+            //var eligibleTypes = new Weapon.WeaponType[] { Weapon.WeaponType.Axe_1H, Weapon.WeaponType.Axe_2H, Weapon.WeaponType.Spear_2H, Weapon.WeaponType.Sword_1H, Weapon.WeaponType.Sword_2H };
 
-            var hitFromBack = Vector3.Dot(__instance.transform.forward, -_hitDir) < 0f && _angle >= 120f;
-            if (_damageSource is Weapon _weapon && eligibleTypes.Contains(_weapon.Type) && SkillRequirements.SafeHasSkillKnowledge(_weapon?.OwnerCharacter, IDs.precisionStrikeSkillID) && (hitFromBack || __instance.CharHurtType == Character.HurtType.Knockdown))
+            //taken from official code, but missbehaves
+            //var hitFromBack = Vector3.Dot(__instance.transform.forward, -_hitDir) < 0f && _angle >= 120f;
+            
+            if (_damageSource is Weapon _weapon)
             {
-                //var attackType = ((int)SideLoader.At.GetField<Character>(_weapon.OwnerCharacter, "m_attackID"));
-                var attackType = _weapon.LastAttackID;
-                if (attackType == 0 || attackType == 1)
+                var hitFromBack = Vector3.Angle(__instance.transform.forward, _weapon.OwnerCharacter.transform.forward) < 60f;
+
+                if (/*eligibleTypes.Contains(_weapon.Type) &&*/ SkillRequirements.SafeHasSkillKnowledge(_weapon?.OwnerCharacter, IDs.precisionStrikeSkillID) && (hitFromBack || __instance.CharHurtType == Character.HurtType.Knockdown))
                 {
-                    _damage.IgnoreHalfResistances = true;
+                    var attackType = _weapon.LastAttackID;
+                    if (attackType == 0 || attackType == 1)
+                    {
+                        Debug.Log("from behind");
+                        _damage.IgnoreHalfResistances = true;
+                        _damage.Add(_damage * 0.2f);
+                        TinyEffectManager.AddStatusEffectForDuration(__instance, IDs.extremeBleedNameID, 10, _weapon.OwnerCharacter);
+                    }
                 }
             }
         }
