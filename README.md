@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 18, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 30, 2024. 
 
 
 
@@ -17,6 +17,7 @@ What's the purpose of "Vagabond"?
 # Features
 
 The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus on foraging, taming wildlife, maintaining equipment, dirty tricks and positional combat.
+
 **Swift Strike** (Cooldown: 15 seconds, Stamina cost: 7)
 
 * Dash forward and strike. Applies Bleeding and causes Drawback.
@@ -47,11 +48,16 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 
 **Precision Strike** (Passive)
 
-* Weapon attacks ignores half of the targets resistances when the target is prone or hit from behind.
+* Weapon attacks against prone targets or from behind deal some bonus damage, ignore half of the targets' resistances and cause extreme bleeding for a brief moment.
 
 **Throw Salt** (Cooldown: 15 seconds, Stamina cost: 7)
 
 * Causes Rage and Confusion
+
+**Honed Edge** (Duration: 2400 seconds)
+
+* Adds 20% weapon damage as physical damage
+* Duration drops by 20 seconds whenever the imbued weapon loses durability
 
 
 
@@ -59,6 +65,13 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.7
+
+  * **Precision Strike**
+
+    * Triggers if you are behind the creature rather than if the weapon attack lands from behind the creature
+    * In addition to ignoring half resistances, it now causes a 20% damage bonus and 10 seconds of **Extreme Bleeding**
+  * Fixed a bug where **Animal Friendship** would not be required to give food to a tame beast.
 * Version 0.0.6
 
   * Implemented an easter egg where you can give White Fang a weapon that suits his armor
