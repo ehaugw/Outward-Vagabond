@@ -54,9 +54,8 @@ namespace Vagabond
                 if (/*eligibleTypes.Contains(_weapon.Type) &&*/ SkillRequirements.SafeHasSkillKnowledge(_weapon?.OwnerCharacter, IDs.precisionStrikeSkillID) && (hitFromBack || __instance.CharHurtType == Character.HurtType.Knockdown))
                 {
                     var attackType = _weapon.LastAttackID;
-                    if (attackType == 0 || attackType == 1)
+                    if (attackType == 0 || attackType == 1 || attackType == 5)
                     {
-                        Debug.Log("from behind");
                         _damage.IgnoreHalfResistances = true;
                         _damage.Add(_damage * 0.2f);
                         TinyEffectManager.AddStatusEffectForDuration(__instance, IDs.extremeBleedNameID, 10, _weapon.OwnerCharacter);
