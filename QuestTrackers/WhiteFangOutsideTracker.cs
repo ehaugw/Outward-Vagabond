@@ -62,6 +62,9 @@ namespace Vagabond
 
             TinyQuests.PrepareSLQuest(QuestTemplate, QuestLogSignatures, UpdateQuestProgress);
 
+            QuestEventManager.Instance.RegisterOnQEAddedListener(QE_NotFound.EventUID, new MoveToEmercarListener());
+            QuestEventManager.Instance.RegisterOnQEAddedListener(QE_InitialTalk.EventUID, new MoveToEmercarListener());
+            QuestEventManager.Instance.RegisterOnQEAddedListener(QE_GivenSword.EventUID, new MoveToEmercarListener());
             QuestEventManager.Instance.RegisterOnQEAddedListener(QE_MoveOrderToEmercar.EventUID, new MoveToEmercarListener());
             QuestEventManager.Instance.RegisterOnQEAddedListener(QE_FoundInEmercar.EventUID, new TalkInEmercarListener());
         }
