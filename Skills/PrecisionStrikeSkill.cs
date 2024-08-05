@@ -7,7 +7,7 @@ using System.Text;
 using TinyHelper;
 using UnityEngine;
 using HarmonyLib;
-
+using Proficiencies;
 
 namespace Vagabond
 {
@@ -56,9 +56,11 @@ namespace Vagabond
                     var attackType = _weapon.LastAttackID;
                     if (attackType == 0 || attackType == 1 || attackType == 5)
                     {
+                        var proficiency = _weapon?.OwnerCharacter?.GetTotalWeaponProficiency() ?? 0;
+                        var modifier = 1 - 2 / (Math.Pow(Math.E, proficiency / 4 + 0.405465f) + 1);
                         _damage.IgnoreHalfResistances = true;
-                        _damage.Add(_damage * 0.2f);
-                        TinyEffectManager.AddStatusEffectForDuration(__instance, IDs.extremeBleedNameID, 10, _weapon.OwnerCharacter);
+                        _damage.Add(_damage * (float) modifier);
+                        TinyEffectManager.AddStatusEffectForDuration(__instance, IDs.extremeBleedNameID, 10 + proficiency, _weapon.OwnerCharacter);
                     }
                 }
             }

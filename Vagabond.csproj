@@ -67,6 +67,10 @@
       <Project>{69b2c7b7-d715-4002-b009-f84ada52f8cc}</Project>
       <Name>SideLoader</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Proficiencies\Proficiencies.csproj">
+      <Project>{7a5a32c6-16a7-495e-a1f9-92250ca68d9b}</Project>
+      <Name>Proficiencies</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SynchronizedWorldObjects\SynchronizedWorldObjects.csproj">
       <Project>{bada105e-b03e-49e0-a87e-95af55944022}</Project>
       <Name>SynchronizedWorldObjects</Name>

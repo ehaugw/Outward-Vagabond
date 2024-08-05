@@ -3,7 +3,7 @@ gamepath = /mnt/c/Program\ Files\ \(x86\)/Steam/steamapps/common/Outward/Outward
 pluginpath = BepInEx/plugins
 sideloaderpath = $(pluginpath)/$(modname)/SideLoader
 
-dependencies = SynchronizedWorldObjects TinyHelper IronCoin TinyQuests
+dependencies = Proficiencies SynchronizedWorldObjects TinyHelper IronCoin TinyQuests
 
 assemble:
 	# common for all mods
