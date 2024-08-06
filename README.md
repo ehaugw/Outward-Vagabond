@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at July 30, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at August 06, 2024. 
 
 
 
@@ -65,6 +65,10 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.8
+
+  * **Precision Strike** works with running attacks and scales with weapon proficiency
+  * Tiny change to trainer quest setup
 * Version 0.0.7
 
   * **Precision Strike**
@@ -145,6 +149,9 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 * [Vagabond](https://outward.thunderstore.io/package/ehaugw/Vagabond/ "Vagabond")
 
   * Provide positional mechanics, beast taming, dirty tricks and an enhanced survival experience.
+* [Weapon Repair Kit](https://thunderstore.io/c/outward/p/ehaugw/WeaponRepairKit "Weapon Repair Kit")
+
+  * Repair your weapons on the fly!
 
 
 
