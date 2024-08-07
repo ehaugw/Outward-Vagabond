@@ -20,7 +20,7 @@ namespace Vagabond
 
         protected override void ActivateLocally(Character _affectedCharacter, object[] _infos)
         {
-            if (SourceCharacter != null && _affectedCharacter.IsAI && !_affectedCharacter.InCombat && Vector3.Distance(_affectedCharacter.transform.position, SourceCharacter.transform.position) > 15)
+            if (SourceCharacter != null && _affectedCharacter.IsAI && !_affectedCharacter.InCombat && Vector3.Distance(_affectedCharacter.transform.position, SourceCharacter.transform.position) > 15 && !_affectedCharacter.InCombat)
             {
                 var characterAI = _affectedCharacter.gameObject.GetComponentInChildren<CharacterAI>();
 
