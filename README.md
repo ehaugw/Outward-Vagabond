@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at August 06, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at August 07, 2024. 
 
 
 
@@ -65,6 +65,9 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.9
+
+  * Wild beasts occationally move towards raw meat while not in combat, to make the process easier
 * Version 0.0.8
 
   * **Precision Strike** works with running attacks and scales with weapon proficiency
