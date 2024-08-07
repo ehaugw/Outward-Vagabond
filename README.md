@@ -65,6 +65,9 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.11
+
+  * Swap **Throw Salt** and **Swift Strike** positions in skill tree
 * Version 0.0.10
 
   * fix raw meat attraction while taming
