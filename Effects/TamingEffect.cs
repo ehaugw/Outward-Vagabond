@@ -72,21 +72,20 @@ namespace Vagabond
                 companionsInRange = companionsInRange.Where(
                     x =>
                     x.StatusEffectMngr is StatusEffectManager manager
-                    && manager.HasStatusEffect(TamedEffect.EFFECT_NAME)
+                    //&& manager.HasStatusEffect(TamedEffect.EFFECT_NAME)
                     && !manager.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME)
-                    && Random.Range(0, 1) < TICK_RATE / 5
-                    && (
-                        _affectedCharacter.Inventory.SkillKnowledge.IsItemLearned(IDs.animalCompanionSkillID)
-                        || (
-                            !x.InCombat
-                            && !manager.HasStatusEffect(TamedEffect.EFFECT_NAME)
-                        )
-                    )
+                    && !x.InCombat
                 ).ToList();
                 foreach (var c in companionsInRange)
                 {
-                    var characterAI = c.gameObject.GetComponentInChildren<CharacterAI>();
-                    characterAI.SetDestination(food.transform.position, false);
+                    if (
+                        _affectedCharacter.Inventory.SkillKnowledge.IsItemLearned(IDs.animalCompanionSkillID)
+                        || Random.Range(0f, 1f) < TICK_RATE / 10
+                    )
+                    {
+                        var characterAI = c.gameObject.GetComponentInChildren<CharacterAI>();
+                        characterAI.SetDestination(food.transform.position, false);
+                    }
                 }
             }
         }
