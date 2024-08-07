@@ -64,18 +64,29 @@ namespace Vagabond
                         continue;
                     }
 
-                    //attrackt potential companions
-                    List<Character> companionsInRange = new List<Character>();
-                    CharacterManager.Instance.FindCharactersInRange(food.transform.position, AnimalCompanionSkill.ATTRACTION_RANGE, ref companionsInRange);
-                    companionsInRange = companionsInRange.Where(
-                        x =>
-                        x.StatusEffectMngr is StatusEffectManager manager && manager.HasStatusEffect(TamedEffect.EFFECT_NAME) && !manager.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME)
-                    ).ToList();
-                    foreach (var c in companionsInRange)
-                    {
-                        var characterAI = c.gameObject.GetComponentInChildren<CharacterAI>();
-                        characterAI.SetDestination(food.transform.position, false);
-                    }
+                }
+
+                //attract potential companions
+                List<Character> companionsInRange = new List<Character>();
+                CharacterManager.Instance.FindCharactersInRange(food.transform.position, AnimalCompanionSkill.ATTRACTION_RANGE, ref companionsInRange);
+                companionsInRange = companionsInRange.Where(
+                    x =>
+                    x.StatusEffectMngr is StatusEffectManager manager
+                    && manager.HasStatusEffect(TamedEffect.EFFECT_NAME)
+                    && !manager.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME)
+                    && Random.Range(0, 1) < TICK_RATE / 5
+                    && (
+                        _affectedCharacter.Inventory.SkillKnowledge.IsItemLearned(IDs.animalCompanionSkillID)
+                        || (
+                            !x.InCombat
+                            && !manager.HasStatusEffect(TamedEffect.EFFECT_NAME)
+                        )
+                    )
+                ).ToList();
+                foreach (var c in companionsInRange)
+                {
+                    var characterAI = c.gameObject.GetComponentInChildren<CharacterAI>();
+                    characterAI.SetDestination(food.transform.position, false);
                 }
             }
         }
