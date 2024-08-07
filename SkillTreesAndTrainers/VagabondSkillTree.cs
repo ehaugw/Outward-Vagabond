@@ -65,7 +65,7 @@ namespace Vagabond
                             ColumnIndex = 3,
                             RequiredSkillSlot = new Vector2(1,3),
                             Choice1 =
-                                new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.throwSandSkillID,             Breakthrough = false,   RequiredSkillSlot = new Vector2(1, 3) },
+                                new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.swiftStrikeID,             Breakthrough = false,   RequiredSkillSlot = new Vector2(1, 3) },
                             Choice2 = 
                                 new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.animalCompanionSkillID,       Breakthrough = false,   RequiredSkillSlot = new Vector2(1, 3) },
                         },
@@ -79,7 +79,7 @@ namespace Vagabond
                             ColumnIndex = 3,
                             RequiredSkillSlot = new Vector2(4,3),
                             Choice1 =
-                                new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.swiftStrikeID,                Breakthrough = false,   RequiredSkillSlot = new Vector2(4, 3) },
+                                new SL_SkillSlot() { ColumnIndex = 3, SilverCost = 600, SkillID = IDs.throwSandSkillID,                Breakthrough = false,   RequiredSkillSlot = new Vector2(4, 3) },
                             Choice2 =
                                 new SL_SkillSlot() { ColumnIndex = 2, SilverCost = 600, SkillID = IDs.commandBeastSkillID,          Breakthrough = false,   RequiredSkillSlot = new Vector2(4,3) },
                         },
