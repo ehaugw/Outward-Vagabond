@@ -36,7 +36,7 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 
 **Animal Companion** (Passive)
 
-* You can give food to tamed beasts to reproduce the initial taming effects, such as making them follow you.
+* You can give food to tamed beasts to reproduce the initial taming effects, such as making them follow you. Also makes taming a lot easier.
 
 **Careful Maintenance** (Passive)
 
@@ -65,6 +65,11 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.10
+
+  * fix raw meat attraction while taming
+  * animal companions will finish a fight before returning to you
+  * update **Animal Companion** description
 * Version 0.0.9
 
   * Wild beasts occationally move towards raw meat while not in combat, to make the process easier
