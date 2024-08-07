@@ -24,7 +24,7 @@ namespace Vagabond
                 New_ItemID = IDs.animalCompanionSkillID,
                 SLPackName = Vagabond.ModFolderName,
                 SubfolderName = "AnimalCompanion",
-                Description = "You can give food to tamed beasts to reproduce the initial taming effects, such as making them follow you.",
+                Description = "You can give food to tamed beasts to reproduce the initial taming effects, such as making them follow you. Also makes taming a lot easier.",
                 IsUsable = false,
                 CastType = Character.SpellCastType.NONE,
                 CastModifier = Character.SpellCastModifier.Immobilized,
