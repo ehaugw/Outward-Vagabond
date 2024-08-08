@@ -63,30 +63,29 @@ namespace Vagabond
                         EatFood(closestBeast, _affectedCharacter, food);
                         continue;
                     }
-
-                }
-
-                //attract potential companions
-                List<Character> companionsInRange = new List<Character>();
-                CharacterManager.Instance.FindCharactersInRange(food.transform.position, AnimalCompanionSkill.ATTRACTION_RANGE, ref companionsInRange);
-                companionsInRange = companionsInRange.Where(
-                    x =>
-                    x.StatusEffectMngr is StatusEffectManager manager
-                    //&& manager.HasStatusEffect(TamedEffect.EFFECT_NAME)
-                    && !manager.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME)
-                    && !x.InCombat
-                ).ToList();
-                foreach (var c in companionsInRange)
-                {
-                    if (
-                        _affectedCharacter.Inventory.SkillKnowledge.IsItemLearned(IDs.animalCompanionSkillID)
-                        || Random.Range(0f, 1f) < TICK_RATE / 10
-                    )
+                    
+                    //attract potential companions
+                    List<Character> companionsInRange = new List<Character>();
+                    CharacterManager.Instance.FindCharactersInRange(food.transform.position, AnimalCompanionSkill.ATTRACTION_RANGE, ref companionsInRange);
+                    companionsInRange = companionsInRange.Where(
+                        x =>
+                        x.StatusEffectMngr is StatusEffectManager manager
+                        //&& manager.HasStatusEffect(TamedEffect.EFFECT_NAME)
+                        && !manager.HasStatusEffect(AnimalCompanionEffect.EFFECT_NAME)
+                        && !x.InCombat
+                    ).ToList();
+                    foreach (var c in companionsInRange)
                     {
-                        var characterAI = c.gameObject.GetComponentInChildren<CharacterAI>();
-                        characterAI.SetDestination(food.transform.position, false);
+                        if (
+                            Random.Range(0f, 1f) < TICK_RATE / 10
+                        )
+                        {
+                            var characterAI = c.gameObject.GetComponentInChildren<CharacterAI>();
+                            characterAI.SetDestination(food.transform.position, false);
+                        }
                     }
                 }
+
             }
         }
 
