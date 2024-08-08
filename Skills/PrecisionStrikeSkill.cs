@@ -57,7 +57,7 @@ namespace Vagabond
                     if (attackType == 0 || attackType == 1 || attackType == 5)
                     {
                         var proficiency = _weapon?.OwnerCharacter?.GetTotalWeaponProficiency() ?? 0;
-                        var modifier = 1 - 2 / (Math.Pow(Math.E, proficiency / 4 + 0.405465f) + 1);
+                        var modifier = 1 - 2 / (Math.Pow(Math.E, proficiency / 4 + Math.Log(1.5)) + 1);
                         _damage.IgnoreHalfResistances = true;
                         _damage.Add(_damage * (float) modifier);
                         TinyEffectManager.AddStatusEffectForDuration(__instance, IDs.extremeBleedNameID, 10 + proficiency, _weapon.OwnerCharacter);
