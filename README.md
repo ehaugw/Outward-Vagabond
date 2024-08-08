@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at August 07, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at August 08, 2024. 
 
 
 
@@ -16,7 +16,7 @@ What's the purpose of "Vagabond"?
 
 # Features
 
-The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus on foraging, taming wildlife, maintaining equipment, dirty tricks and positional combat.
+The "Vagabond" is a fusion of the rogue and ranger archtypes, with a focus on foraging, tamingwildlife, maintaining equipment, dirty tricks and positional combat. The trainer can be found in the banditcamp in Chersonese with the wendigo an ornate chest.
 
 **Swift Strike** (Cooldown: 15 seconds, Stamina cost: 7)
 
@@ -65,6 +65,9 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 # Patch notes
 
 
+* Version 0.0.12
+
+  * Remove chance for untamed beasts to move to raw meats if the tamer does not have **Animal Companion**
 * Version 0.0.11
 
   * Swap **Throw Salt** and **Swift Strike** positions in skill tree
@@ -163,6 +166,9 @@ The "Vagabond" is a fusion between the rogue and ranger archtypes, with a focus 
 * [Weapon Repair Kit](https://thunderstore.io/c/outward/p/ehaugw/WeaponRepairKit "Weapon Repair Kit")
 
   * Repair your weapons on the fly!
+* [Rune of Protection](https://thunderstore.io/c/outward/p/ehaugw/RuneOfProtection "Rune of Protection")
+
+  * Enable manaless characters to gain Runic Protection through a limited consumable
 
 
 
