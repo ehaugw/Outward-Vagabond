@@ -4,3 +4,5 @@ public/
 resources/README.md
 resources/manifest.json
 thunderstore/
+*.rar
+*.zip
