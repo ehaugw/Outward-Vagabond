@@ -1,7 +1,7 @@
 [Mods by ehaugw](https://outward.thunderstore.io/package/ehaugw/ "Mods by ehaugw") | Support me on [Patreon](https://www.patreon.com/ehaugw "Patreon")
 
 
-This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at August 08, 2024. 
+This mods was confirmed to work with the (at that time) current base game (Outward Definitive Edition) at August 24, 2024. 
 
 
 
@@ -65,6 +65,9 @@ The "Vagabond" is a fusion of the rogue and ranger archtypes, with a focus on fo
 # Patch notes
 
 
+* Version 0.0.13
+
+  * White Fang quest remains completed after a game reboot
 * Version 0.0.12
 
   * Remove chance for untamed beasts to move to raw meats if the tamer does not have **Animal Companion**
