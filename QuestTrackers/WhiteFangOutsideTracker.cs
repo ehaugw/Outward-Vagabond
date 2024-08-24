@@ -134,6 +134,11 @@ namespace Vagabond
                 move = 1;
                 found = 1;
                 provided = 1;
+
+            }
+            if (found == 1)
+            {
+                progress.SetIsCompleted(true);
             }
             
             progress.UpdateLogEntry(QE_Scenario_UID, false, progress.GetLogSignature(GetLogSignature("find")), talked >= 1);
