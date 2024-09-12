@@ -34,6 +34,9 @@ assemble:
 	mkdir -p public/$(sideloaderpath)/Items/ThrowSand/Textures
 	cp -u resources/icons/throw_salt.png                       public/$(sideloaderpath)/Items/ThrowSand/Textures/icon.png
 	cp -u resources/icons/throw_salt_small.png                 public/$(sideloaderpath)/Items/ThrowSand/Textures/skillicon.png
+	mkdir -p public/$(sideloaderpath)/Items/CommandBeast/Textures
+	cp -u resources/icons/command_beast.png                    public/$(sideloaderpath)/Items/CommandBeast/Textures/icon.png
+	cp -u resources/icons/command_beast_small.png              public/$(sideloaderpath)/Items/CommandBeast/Textures/skillicon.png
 	mkdir -p public/$(sideloaderpath)/Items/PrecisionStrike/Textures
 	cp -u resources/icons/precision_strike.png                 public/$(sideloaderpath)/Items/PrecisionStrike/Textures/icon.png
 	cp -u resources/icons/precision_strike_small.png           public/$(sideloaderpath)/Items/PrecisionStrike/Textures/skillicon.png
